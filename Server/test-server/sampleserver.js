@@ -35,8 +35,8 @@ class Player {
         this.x = data.x;
         this.y = data.y;
         this.direction = data.direction;        
-        this.speed = data.speed;     
-        this.canShot = data.canShot;   
+        this.spd = data.spd;     
+        this.canShotMg = data.canShotMg;   
     }
 
     // перевод в строку
@@ -90,12 +90,12 @@ io.on('connection', (client) => {
             socket: client,
             id: playerId,
             username: data.username,
-            x: Math.floor(Math.random() * 700) + 60,
-            y: Math.floor(Math.random() * 500) + 60,
-            direction: 0,
-            speed: 0,
+            x: Math.floor(Math.random() * 4096),
+            y: 600,
+            direction: 270,
+            spd: 5,
             hp: 110,
-            canShot: true,
+            canShotMg: true,
         });
 
         // добавление в список игроков
@@ -160,8 +160,8 @@ io.on('connection', (client) => {
         player.x = data.x;
         player.y = data.y;
         player.direction = data.direction;
-        player.speed = data.speed;
-        player.canShot = data.canShot;
+        player.spd = data.spd;
+        player.canShotMg = data.canShotMg;
 
         client.broadcast.emit('position_update', player.toString());
     });

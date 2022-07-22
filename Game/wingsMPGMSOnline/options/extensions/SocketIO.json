@@ -1,0 +1,9 @@
+{
+  "extensionId": {
+    "name": "SocketIO",
+    "path": "extensions/SocketIO/SocketIO.yy"
+  },
+  "resourceVersion": "1.0",
+  "resourceType": "GMExtensionConfigSet",
+  "configurables": null
+}
